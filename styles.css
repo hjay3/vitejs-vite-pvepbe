@@ -1,0 +1,132 @@
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #87ceeb;
+
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#city-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px;
+}
+
+#background,
+#buildings,
+#cars,
+#street-lights,
+#weather-effects {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#background {
+  background: linear-gradient(to bottom, #87ceeb 0%, #e0f6ff 100%);
+  transition: all 1s ease;
+}
+
+.building {
+  position: absolute;
+  bottom: 0;
+  background-color: #555;
+  transform-origin: bottom;
+}
+
+.window {
+  position: absolute;
+  background-color: #ffd700;
+  width: 10px;
+  height: 10px;
+}
+
+.car {
+  position: absolute;
+  bottom: 10px;
+  width: 60px;
+  height: 30px;
+  background-color: #ff0000;
+  border-radius: 5px;
+}
+
+.street-light {
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 100px;
+  background-color: #333;
+}
+
+.light {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 0, 0.5);
+}
+
+#weather-effects {
+  pointer-events: none;
+}
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #5af;
+}
+
+#ui-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #6400ff;
+  outline: 4px auto -webkit-focus-ring-color;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
